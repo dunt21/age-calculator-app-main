@@ -1,37 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link href="./src/output.css" rel="stylesheet" />
+    <title>Frontend Mentor | Age calculator app</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body classname="">
+    <main
+      class="bg-white mt-24 mx-5 border-0b py-12 px-5 rounded-t-3xl rounded-bl-3xl rounded-br-[5rem] max-w-[90%]"
+    >
+      <form novalidate class="w-full relative">
+        <section class="flex [&>div]:flex-1 gap-5">
+          <div>
+            <label for="day">DAY</label>
+            <input type="number" id="day" placeholder="DD" />
+          </div>
+          <div>
+            <label for="month">MONTH</label>
+            <input type="number" id="month" placeholder="MM" />
+          </div>
+          <div>
+            <label for="year">YEAR</label>
+            <input type="number" id="year" placeholder="YY" />
+          </div>
+        </section>
 
-  Day
-  DD
+        <section class="">
+          <div class="w-full border-1 border-gray-200 mt-10"></div>
+          <button
+            class="border-0 rounded-full mx-auto block absolute left-1/2 top-[80%] -translate-x-1/2 bg-purple-500"
+          >
+            <img
+              src="./assets/images/icon-arrow.svg"
+              class="w-1/2 mx-auto my-[11.5px]"
+            />
+          </button>
+        </section>
+      </form>
 
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <section class="mt-16 text-5xl font-[900] italic">
+        <p><span>--</span> years</p>
+        <p><span>--</span> months</p>
+        <p><span>--</span> days</p>
+      </section>
+    </main>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Your Name Here</a>.
+    </div>
+  </body>
 </html>
