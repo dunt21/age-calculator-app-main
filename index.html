@@ -12,6 +12,7 @@
       href="./assets/images/favicon-32x32.png"
     />
     <link href="./src/output.css" rel="stylesheet" />
+    <script defer src="./script.js"></script>
     <title>Frontend Mentor | Age calculator app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -29,26 +30,27 @@
     <main
       class="bg-white mt-24 mx-5 border-0b py-12 px-5 rounded-t-3xl rounded-bl-3xl rounded-br-[5rem] max-w-[90%]"
     >
-      <form novalidate class="w-full relative">
+      <form novalidate class="w-full relative" id="form">
         <section class="flex [&>div]:flex-1 gap-5">
-          <div>
+          <div class="dayField">
             <label for="day">DAY</label>
-            <input type="number" id="day" placeholder="DD" />
+            <input type="number" max="31" min="1" id="day" placeholder="DD" />
           </div>
-          <div>
+          <div class="monthField">
             <label for="month">MONTH</label>
-            <input type="number" id="month" placeholder="MM" />
+            <input type="number" id="month" placeholder="MM" max="12" min="1" />
           </div>
-          <div>
+          <div class="yearField">
             <label for="year">YEAR</label>
-            <input type="number" id="year" placeholder="YY" />
+            <input type="number" id="year" placeholder="YY" max="2025" />
           </div>
         </section>
 
         <section class="">
           <div class="w-full border-1 border-gray-200 mt-10"></div>
           <button
-            class="border-0 rounded-full mx-auto block absolute left-1/2 top-[80%] -translate-x-1/2 bg-purple-500"
+            class="border-0 rounded-full mx-auto block absolute left-1/2 top-[80%] -translate-x-1/2 bg-purple-500 hover:bg-black cursor-pointer"
+            id="submit"
           >
             <img
               src="./assets/images/icon-arrow.svg"
@@ -68,7 +70,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
+      >. Coded by <a href="#">Suad</a>.
     </div>
   </body>
 </html>
