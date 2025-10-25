@@ -26,9 +26,9 @@
       }
     </style>
   </head>
-  <body classname="">
+  <body class="overflow-x-hidden flex flex-col items-center">
     <main
-      class="bg-white mt-24 mx-5 border-0b py-12 px-5 rounded-t-3xl rounded-bl-3xl rounded-br-[5rem] max-w-[90%]"
+      class="w-full bg-white mt-24 mx-[3vw] border-0b py-12 px-5 rounded-t-3xl rounded-bl-3xl rounded-br-[5rem] max-w-[90%] sm:w-[60%] md:w-[50%] lg:w-[40%]"
     >
       <form novalidate class="w-full relative" id="form">
         <section class="flex [&>div]:flex-1 gap-5">
@@ -49,7 +49,7 @@
         <section class="">
           <div class="w-full border-1 border-gray-200 mt-10"></div>
           <button
-            class="border-0 rounded-full mx-auto block absolute left-1/2 top-[80%] -translate-x-1/2 bg-purple-500 hover:bg-black cursor-pointer"
+            class="border-0 rounded-full mx-auto block absolute left-1/2 top-[80%] -translate-x-1/2 bg-purple-500 hover:bg-black cursor-pointer w-12 sm:left-[95%]"
             id="submit"
           >
             <img
@@ -60,10 +60,10 @@
         </section>
       </form>
 
-      <section class="mt-16 text-5xl font-[900] italic">
-        <p><span>--</span> years</p>
-        <p><span>--</span> months</p>
-        <p><span>--</span> days</p>
+      <section class="mt-16 text-5xl lg:text-7xl font-[900] italic age-display">
+        <p><span class="display-year">--</span> years</p>
+        <p><span class="display-month">--</span> months</p>
+        <p><span class="display-day">--</span> days</p>
       </section>
     </main>
     <div class="attribution">
