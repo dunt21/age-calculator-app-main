@@ -28,8 +28,14 @@
   </head>
   <body class="overflow-x-hidden flex flex-col items-center">
     <main
-      class="w-full bg-white mt-24 mx-[3vw] border-0b py-12 px-5 rounded-t-3xl rounded-bl-3xl rounded-br-[5rem] max-w-[90%] sm:w-[60%] md:w-[50%] lg:w-[40%]"
+      class="w-full bg-white mt-24 mx-[3vw] border-0b py-12 px-5 rounded-t-3xl rounded-bl-3xl rounded-br-[5rem] max-w-[90%] sm:w-[60%] md:w-[50%] lg:w-[40%] relative"
     >
+      <div
+        class="bg-purple absolute top-3 left-[90%] p-1 rounded-full cursor-pointer hover:bg-black restart"
+      >
+        <img src="./assets/restart-svgrepo-com.svg" alt="start" class="w-4" />
+      </div>
+
       <form novalidate class="w-full relative" id="form">
         <section class="flex [&>div]:flex-1 gap-5">
           <div class="dayField">

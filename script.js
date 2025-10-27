@@ -3,6 +3,9 @@
 const inputDay = document.getElementById("day");
 const inputMonth = document.getElementById("month");
 const inputYear = document.getElementById("year");
+const displayDates = document
+  .querySelector(".age-display")
+  .querySelectorAll("span");
 
 const submitBtn = document.getElementById("submit");
 const form = document.getElementById("form");
@@ -10,18 +13,25 @@ const dayContainer = document.querySelector(".dayField");
 const monthContainer = document.querySelector(".monthField");
 const yearContainer = document.querySelector(".yearField");
 const allInputs = document.querySelectorAll("input");
-let hasErr;
 
-// const errMsg = document.
-// const errMsg = document.createElement("p");
+//initialization function to start the app from fresh
+function init() {
+  inputDay.value = "";
+  inputMonth.value = "";
+  inputYear.value = "";
 
+  displayDates.forEach((p) => (p.textContent = "--"));
+}
+
+//when the form is submitted
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  validateInputs();
+  validateFullDate();
   calculateAge();
 });
 
+//used to create an err msg
 function createErrMsg(msg, id) {
   uiErr("add");
   hasErr = true;
@@ -55,9 +65,6 @@ function checkErrs() {
 
     if (inputId === "day" && inp.value > 31) {
       uiErr("add");
-
-      // const invalidDateErr = dayContainer.querySelector("#invalid-date");
-      // if (invalidDateErr) return;
 
       console.log("wow");
       if (!dayErr)
@@ -115,7 +122,8 @@ function uiErr(action) {
   allInputs.forEach((inp) => inp.classList[action]("inputErr"));
 }
 
-function validateInputs() {
+//to validate the date of the user inputted
+function validateFullDate() {
   const values = checkErrs();
   const invalidDateErr = dayContainer.querySelector("#invalid-date");
 
@@ -142,11 +150,12 @@ function validateInputs() {
   return values;
 }
 
+//to calculate the age in month, day and year
 function calculateAge() {
   const dateNow = new Date();
   console.log(dateNow);
 
-  const vals = validateInputs();
+  const vals = validateFullDate();
 
   if (!vals) return;
   uiErr("remove");
@@ -158,10 +167,6 @@ function calculateAge() {
   const month = vals[1] - dateNow.getMonth() - 1;
   const year = vals[2] - dateNow.getFullYear();
 
-  const displayDates = document
-    .querySelector(".age-display")
-    .querySelectorAll("span");
-
   displayDates.forEach((p) => {
     if (p.classList.contains("display-day")) p.textContent = Math.abs(days);
     if (p.classList.contains("display-month")) p.textContent = Math.abs(month);
@@ -170,3 +175,5 @@ function calculateAge() {
 
   console.log(vals);
 }
+
+document.querySelector(".restart").addEventListener("click", init);
